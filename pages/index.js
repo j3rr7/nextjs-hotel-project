@@ -21,7 +21,12 @@ export default function Home() {
       .then(res => res.json())
       .then(data => {
         setIsSubmitting(false);
-        alert(JSON.stringify(data))
+
+        if (data.success) {
+          router.push("/dashboard", "/", {shallow: false}).catch(
+            err => console.log(err)
+          );
+        }
       })
   };
 
