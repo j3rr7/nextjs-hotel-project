@@ -11,11 +11,12 @@ export function DashboardWrapper({children, PageProp}) {
 }
 
 export default function Home({children}) {
+  const [menu, setMenu] = useState(false);
   return (
     <>
-      <Navbar/>
+      <Navbar settingMenu={menu}/>
       <DashboardWrapper>
-        <Menu/>
+        <Menu settingMenu={menu} settingSetMenu={setMenu}/>
         {children}
       </DashboardWrapper>
     </>

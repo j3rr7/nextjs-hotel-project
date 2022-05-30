@@ -4,20 +4,21 @@ import Image from "next/image"
 
 const ItemWrapper = ({children, condition, prop}) => {
   return condition ? (
-    <a
-      {...prop}
-      className="relative px-4 py-3 flex items-center space-x-4 rounded-xl text-white bg-gradient-to-r from-sky-600 to-cyan-400"
-    >{children}</a>
+    <Link {...prop}>
+      <a className="relative px-4 py-3 flex items-center space-x-4 rounded-xl text-white bg-gradient-to-r from-sky-600 to-cyan-400">
+        {children}
+      </a>
+    </Link>
   ) : (
-    <a
-      {...prop}
-      className="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group"
-    >
-      {children} </a>
+    <Link {...prop}>
+      <a className="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group">
+        {children} 
+      </a>
+    </Link>
   );
 }
 
-export default function Navbar({CurrentPage}) {
+export default function Navbar({CurrentPage, settingMenu}) {
   const router = useRouter();
 
   return (
