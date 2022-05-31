@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
 
-export default function Menu({children, PageProp, settingMenu, settingSetMenu}) {
+export default function Menu({ setMenuHidden }) {
 
   return (
     <div className="sticky z-10 top-0 h-16 border-b bg-white lg:py-2.5">
-      {console.log(settingMenu)}
           <div className="px-6 flex items-center justify-between space-x-4 2xl:container">
             <h5 className="text-2xl text-gray-600 font-medium lg:block" hidden="">
               Index
             </h5>
-            <button 
-              onClick={() => settingSetMenu(!settingMenu)}
+            <button
+              onClick={setMenuHidden}
               className="w-12 h-16 -mr-2 border-r lg:hidden border-red-500"
             >
               <svg
