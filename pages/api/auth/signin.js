@@ -7,7 +7,7 @@ export default function handler(req, res) {
   }
 
   // get data from body
-  const {employee_id, password} = req.body;
+  const {employee_id, password, remember_me} = req.body;
 
   // check if data is valid
   if (!employee_id && !password) {
@@ -16,7 +16,10 @@ export default function handler(req, res) {
       message: 'Employee ID and Password are required',
     });
   }
-  // ToDo: Set Session
+
+  if (remember_me) {
+    // ToDo: Set Session or Cookie
+  }
 
   res.status(200).json({
     success: true,

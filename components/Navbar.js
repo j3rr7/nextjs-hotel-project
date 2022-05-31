@@ -30,12 +30,14 @@ export default function Navbar({ isMenuHidden }) {
             <Image src="/550.png" className="w-5" width="50" height="50" alt="Logo"/>
           </Link>
         </div>
+
         <div className="mt-8 text-center">
           <h5 className="hidden mt-4 text-xl font-semibold text-gray-600 lg:block">
             Fname Lname
           </h5>
           <span className="hidden text-gray-400 lg:block">Role</span>
         </div>
+
         <ul className="space-y-2 tracking-wide mt-8">
           <li>
             <ItemWrapper condition={router.pathname === "/dashboard"}
@@ -83,9 +85,11 @@ export default function Navbar({ isMenuHidden }) {
             </ItemWrapper>
           </li>
         </ul>
+
       </div>
+
       <div className="px-6 -mx-6 pt-4 flex justify-between items-center border-t">
-        <button className="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group">
+        <button className="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group hover:text-red-500">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6"
@@ -100,7 +104,7 @@ export default function Navbar({ isMenuHidden }) {
               d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
             />
           </svg>
-          <span className="group-hover:text-gray-700 hover:text-red-500 hover:text-primary">Logout</span>
+          <span className="group-hover:text-red-500 hover:text-primary">Logout</span>
         </button>
       </div>
     </aside>

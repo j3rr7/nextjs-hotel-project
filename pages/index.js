@@ -12,8 +12,10 @@ export default function Home() {
 
 
   const onSubmit = (data) => {
+    if (isSubmitting) return; // return if isSubmitting is true
+    // if isSubmitting is false run command below
     setIsSubmitting(true);
-    fetch("/api/auth/signin", {
+    fetch("/api/auth/signin", { // fetch data from our api
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(data)
@@ -21,9 +23,8 @@ export default function Home() {
       .then(res => res.json())
       .then(data => {
         setIsSubmitting(false);
-
         if (data.success) {
-          router.push("/dashboard", "/", {shallow: false}).catch(
+          router.push("/dashboard").catch(
             err => console.log(err)
           );
         }
