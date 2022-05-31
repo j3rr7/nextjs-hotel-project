@@ -18,7 +18,7 @@ const ItemWrapper = ({children, condition, prop}) => {
   );
 }
 
-export default function Navbar({CurrentPage, settingMenu}) {
+export default function Navbar() {
   const router = useRouter();
 
   return (
