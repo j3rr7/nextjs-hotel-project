@@ -15,6 +15,16 @@ body {
 }
 
 /* border */
+.hover\:rounded-md:hover {
+  border-radius: 0.375rem/* 6px */;
+}
+.hover\:border-gradient:hover{
+  border-image: linear-gradient(to right, #0284c7, #22d3ee) 1;
+}
+.hover\:text-gradient:hover{
+  background: -webkit-linear-gradient(to right, #0284c7, #22d3ee);
+  /* color: linear-gradient(to right, #0284c7, #22d3ee) 1; */
+}
 .border-1{
   border-width: 1px;
 }

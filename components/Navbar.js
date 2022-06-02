@@ -5,13 +5,13 @@ import Image from "next/image"
 const ItemWrapper = ({children, condition, prop}) => {
   return condition ? (
     <Link {...prop}>
-      <a className="relative px-4 py-3 flex items-center space-x-4 rounded-xl text-white bg-gradient-to-r from-sky-600 to-cyan-400">
+      <a className="px-4 py-3 flex items-center space-x-4 rounded-md text-white bg-gradient-to-r from-sky-600 to-cyan-400">
         {children}
       </a>
     </Link>
   ) : (
     <Link {...prop}>
-      <a className="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group">
+      <a className="px-4 py-3 flex items-center space-x-4 text-gray-600 group border-2 border-transparent group-hover:rounded-md hover:border-2 hover:border-gradient transition-all duration-300 ease-in-out">
         {children} 
       </a>
     </Link>
@@ -23,7 +23,7 @@ export default function Navbar({ isMenuHidden }) {
 
   return (
     <aside
-      className={ (isMenuHidden ? "ml-[-100%] " : " ") + "fixed z-10 top-0 pb-3 px-6 w-full flex flex-col justify-between h-screen border-r bg-white transition duration-300 md:w-4/12 lg:ml-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%]" }>
+      className={ (isMenuHidden ? "ml-[-100%] " : " ") + "fixed z-10 top-0 pb-3 px-6 w-full flex flex-col justify-between h-screen border-r bg-white transition-all translate-x-0 duration-700 md:w-4/12 lg:ml-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%]" }>
       <div>
         <div className="-mx-6 px-6 py-4">
           <Link href="/" title="home">
@@ -57,12 +57,12 @@ export default function Navbar({ isMenuHidden }) {
                   className="fill-current group-hover:text-sky-300"
                 />
               </svg>
-              <span className="-mr-1 font-medium">Dashboard</span>
+              <span className="-mr-1 font-medium group">Dashboard</span>
             </ItemWrapper>
           </li>
           <li>
             <ItemWrapper condition={router.pathname === "/dashboard/categories"}
-                         prop={{href: "/dashboard/categories"}}
+              prop={{href: "/dashboard/categories"}}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -81,7 +81,7 @@ export default function Navbar({ isMenuHidden }) {
                   d="M6 12a2 2 0 012-2h8a2 2 0 012 2v2a2 2 0 01-2 2H2h2a2 2 0 002-2v-2z"
                 />
               </svg>
-              <span className="group-hover:text-gray-700">Categories</span>
+              <span className="group-hover:text-sky-600">Categories</span>
             </ItemWrapper>
           </li>
         </ul>
@@ -89,7 +89,7 @@ export default function Navbar({ isMenuHidden }) {
       </div>
 
       <div className="px-6 -mx-6 pt-4 flex justify-between items-center border-t">
-        <button className="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group hover:text-red-500">
+        <button className="px-4 py-3 flex items-center w-full space-x-4 rounded-md text-gray-600 group border-2 border-transparent hover:text-red-500 hover:border-2 hover:rounded-md hover:border-red-500">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6"
@@ -104,7 +104,7 @@ export default function Navbar({ isMenuHidden }) {
               d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
             />
           </svg>
-          <span className="group-hover:text-red-500 hover:text-primary">Logout</span>
+          <span className="group-hover:text-red-500 hover:text-primary font-medium">Logout</span>
         </button>
       </div>
     </aside>

@@ -11,7 +11,7 @@ export function DashboardWrapper({children, PageProp}) {
 }
 
 export default function Home({children}) {
-  const [isMenuHidden, setMenuHidden] = useState(false);
+  const [isMenuHidden, setMenuHidden] = useState(true);
 
   const toggleMenu = () => {
     setMenuHidden(!isMenuHidden);
